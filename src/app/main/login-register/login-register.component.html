@@ -1,0 +1,43 @@
+<div class="login-register-container">
+  <mat-card class="login-register-card">
+    <mat-card-header>
+      <!--<div mat-card-avatar class="example-header-image"></div>-->
+      <mat-card-title>{{title}}</mat-card-title>
+      <!--<mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <div *ngIf="loginTab" class="login-container">
+        <mat-form-field class="example-full-width">
+          <input matInput type="tel" placeholder="Phone Number" [formControl]="loginNumberFormControl" [(ngModel)]="login.user.number">
+          <mat-error *ngIf="loginNumberFormControl.hasError('pattern') || loginNumberFormControl.hasError('required')">Please type a real phone number</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput type="password" placeholder="Password" [formControl]="loginPasswordFormControl" [(ngModel)]="login.user.password">
+          <mat-error *ngIf="loginPasswordFormControl.hasError('required')">Please type a password</mat-error>
+        </mat-form-field>
+      </div>
+      <div *ngIf="registerTab" class="register-container">
+        <mat-form-field class="example-full-width">
+          <input matInput type="tel" placeholder="Phone Number" [(ngModel)]="register.user.number">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" placeholder="Name" [(ngModel)]="register.user.name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput type="password" placeholder="Password" [(ngModel)]="register.user.password">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput type="password" placeholder="Confirm Password" [(ngModel)]="register.rePassword">
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="button-full-width">
+      <button mat-raised-button color="primary" (click)="login_register()">{{title}}</button>
+      <span mat-button (click)="exchange()">Go to {{exchangeText}}</span>
+    </mat-card-actions>
+  </mat-card>
+
+
+</div>
+

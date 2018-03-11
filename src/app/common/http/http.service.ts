@@ -13,20 +13,20 @@ export class HttpService {
     return this.http.post<Response<T>>(url, body);
   };
 
-  post<T>(url:string,body:any,success?:(result:T) =>void,failed?:(e:string) => void){
-    this.postForResponse<T>(url,body).subscribe(response=>{
-      if(response.success){
+  post<T>(url: string, body: any, success?: (result: T) => void, failed?: (e: string) => void) {
+    this.postForResponse<T>(url, body).subscribe(response => {
+      if (response.success) {
         success(response.result);
-      }else {
+      } else {
         failed(response.message);
       }
-    },e=>{
-      console.error("http request failed" );
+    }, e => {
+      console.error('http request failed');
     })
   }
 
 }
-export interface Response<T>{
+export interface Response<T> {
   success: boolean;
   message: string;
   result: T;

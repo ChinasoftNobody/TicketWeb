@@ -1,0 +1,12 @@
+.login-register-container{
+  width: 400px;
+  padding: 150px 100px 0 0;
+  float: right;
+}
+.login-register-card{}
+.login-container{padding: 20px 20px}
+.login-container>.mat-form-field{width: 100%;}
+.register-container{padding: 20px 20px}
+.button-full-width{padding: 0 20px}
+.button-full-width>button{width: 100%}
+.button-full-width>span{width: 100%;text-decoration: underline }
