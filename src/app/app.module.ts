@@ -23,9 +23,11 @@ import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
 import {MatCardModule} from '@angular/material';
 import {ServerConfig} from './config/server.config';
 import {SessionService} from './common/session.service';
+import {EventService} from './common/event.service';
+import {ScenicComponent} from './main/scenic/scenic.component';
 @NgModule({
   declarations: [
-    AppComponent, AppHeaderComponent, AppFooterComponent, MainComponent, MenuComponent, LoginRegisterComponent
+    AppComponent, AppHeaderComponent, AppFooterComponent, MainComponent, MenuComponent, LoginRegisterComponent, ScenicComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,7 @@ import {SessionService} from './common/session.service';
     MatCardModule,
     ReactiveFormsModule
   ],
-  providers: [HttpService, HttpClient, ServerConfig, SessionService],
+  providers: [HttpService, HttpClient, ServerConfig, SessionService, EventService],
   bootstrap: [AppComponent, AppHeaderComponent, AppFooterComponent]
 })
 export class AppModule {

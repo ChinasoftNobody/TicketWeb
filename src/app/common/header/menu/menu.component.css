@@ -7,10 +7,6 @@
 }
 .menu-container>.menu-content{
   position: relative;
-  height: 80px;
   text-align: right;
 }
-.mat-button{
-  height: 80px;
-  background-color: #00a8ff;
-}
+.menu-container>.menu-content-login{position: relative;text-align: right;}

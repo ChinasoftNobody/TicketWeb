@@ -6,6 +6,7 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
 import {LoginRegisterService} from './login-register.service';
 import {Router} from '@angular/router';
 import {SessionService} from '../../common/session.service';
+import {EventService} from '../../common/event.service';
 
 @Component({
   selector: 'app-login-register',
@@ -45,7 +46,8 @@ export class LoginRegisterComponent {
 
   constructor(private loginRegisterService: LoginRegisterService,
               private router: Router,
-              private session: SessionService) {
+              private session: SessionService,
+              private eventService: EventService) {
   }
 
   exchange() {
@@ -110,6 +112,9 @@ export class LoginRegisterComponent {
     this.session.put('userId', user.id);
     this.session.put('userName', user.name);
     this.session.put('userNumber', user.number);
+    this.eventService.eventbus.emit({
+      key: this.eventService.event_login
+    });
   }
 
 }

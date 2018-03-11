@@ -26,4 +26,7 @@ export class SessionService {
     sessionStorage.setItem(key, value);
   }
 
+  public clear() {
+    sessionStorage.clear();
+  }
 }
