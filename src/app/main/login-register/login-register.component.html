@@ -5,31 +5,36 @@
       <mat-card-title>{{title}}</mat-card-title>
       <!--<mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <!--<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
     <mat-card-content>
       <div *ngIf="loginTab" class="login-container">
         <mat-form-field class="example-full-width">
           <input matInput type="tel" placeholder="Phone Number" [formControl]="loginNumberFormControl" [(ngModel)]="login.user.number">
-          <mat-error *ngIf="loginNumberFormControl.hasError('pattern') || loginNumberFormControl.hasError('required')">Please type a real phone number</mat-error>
+          <mat-error *ngIf="loginNumberFormControl.hasError('required')">Please type a real phone number</mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <input matInput type="password" placeholder="Password" [formControl]="loginPasswordFormControl" [(ngModel)]="login.user.password">
           <mat-error *ngIf="loginPasswordFormControl.hasError('required')">Please type a password</mat-error>
         </mat-form-field>
+        <mat-error *ngIf="login.loginFailed">{{login.loginFailedMessage}}</mat-error>
       </div>
       <div *ngIf="registerTab" class="register-container">
         <mat-form-field class="example-full-width">
-          <input matInput type="tel" placeholder="Phone Number" [(ngModel)]="register.user.number">
+          <input matInput type="tel" placeholder="Phone Number" [formControl]="registerNumberFormControl" [(ngModel)]="register.user.number">
+          <mat-error *ngIf="registerNumberFormControl.hasError('pattern') || registerNumberFormControl.hasError('required')">Please type a real phone number</mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <input matInput type="text" placeholder="Name" [(ngModel)]="register.user.name">
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input matInput type="password" placeholder="Password" [(ngModel)]="register.user.password">
+          <input matInput type="password" placeholder="Password" [formControl]="registerPasswordFormControl" [(ngModel)]="register.user.password">
+          <mat-error *ngIf="registerPasswordFormControl.hasError('required')">Please type a password</mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input matInput type="password" placeholder="Confirm Password" [(ngModel)]="register.rePassword">
+          <input matInput type="password" placeholder="Confirm Password" [formControl]="registerRePasswordFormControl" [(ngModel)]="register.rePassword">
+          <mat-error *ngIf="registerPasswordFormControl.hasError('required')">Please re-type the password</mat-error>
         </mat-form-field>
+        <mat-error *ngIf="register.registerFailed">{{register.registerFailedMessage}}</mat-error>
       </div>
     </mat-card-content>
     <mat-card-actions class="button-full-width">

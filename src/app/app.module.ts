@@ -21,6 +21,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {HttpService} from './common/http/http.service';
 import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
 import {MatCardModule} from '@angular/material';
+import {ServerConfig} from './config/server.config';
+import {SessionService} from './common/session.service';
 @NgModule({
   declarations: [
     AppComponent, AppHeaderComponent, AppFooterComponent, MainComponent, MenuComponent, LoginRegisterComponent
@@ -42,7 +44,7 @@ import {MatCardModule} from '@angular/material';
     MatCardModule,
     ReactiveFormsModule
   ],
-  providers: [HttpService, HttpClient],
+  providers: [HttpService, HttpClient, ServerConfig, SessionService],
   bootstrap: [AppComponent, AppHeaderComponent, AppFooterComponent]
 })
 export class AppModule {

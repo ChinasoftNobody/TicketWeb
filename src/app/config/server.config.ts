@@ -8,29 +8,13 @@ export const ServerInfo = {
   protocol: 'http',
   interfaces: [
     {
-      name: 'index',
+      name: 'user.login',
       type: 'post',
-      url: '/daily/module/query'
+      url: '/ticket/user/login'
     }, {
-      name: 'calendar',
+      name: 'user.register',
       type: 'post',
-      url: '/daily/schedule/calendar'
-    }, {
-      name: 'schedule_list',
-      type: 'post',
-      url: '/daily/schedule/query'
-    }, {
-      name: 'login',
-      type: 'post',
-      url: '/daily/user/login'
-    }, {
-      name: 'repositoryList',
-      type: 'post',
-      url: '/daily/developer/login-register/list'
-    }, {
-      name: 'repositoryUpdate',
-      type: 'post',
-      url: '/daily/developer/login-register/update'
+      url: '/ticket/user/register'
     }
   ]
 };
