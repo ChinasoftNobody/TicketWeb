@@ -6,7 +6,7 @@ import {ScenicComponent} from '../main/scenic/scenic.component';
  * Created by Administrator on 2017/5/28.
  */
 const routes: Routes = [
-  {path: '', redirectTo: '/index', pathMatch: 'full'},
+  {path: '', redirectTo: '/scenic', pathMatch: 'full'},
   {path: 'index', component: LoginRegisterComponent},
   {path: 'scenic', component: ScenicComponent}
 ];

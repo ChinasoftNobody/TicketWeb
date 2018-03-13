@@ -20,7 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {HttpService} from './common/http/http.service';
 import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
-import {MatCardModule} from '@angular/material';
+import {MatCardModule, MatExpansionModule, MatSelectModule, MatStepperModule} from '@angular/material';
 import {ServerConfig} from './config/server.config';
 import {SessionService} from './common/session.service';
 import {EventService} from './common/event.service';
@@ -44,7 +44,9 @@ import {ScenicComponent} from './main/scenic/scenic.component';
     MatPaginatorModule,
     HttpClientModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatExpansionModule, MatSelectModule
   ],
   providers: [HttpService, HttpClient, ServerConfig, SessionService, EventService],
   bootstrap: [AppComponent, AppHeaderComponent, AppFooterComponent]

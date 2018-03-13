@@ -1,3 +1,16 @@
 <div class="scenic-container">
-  scenic
+    <div class="scenic-select-card">
+      <mat-card class="example-card">
+        <mat-card-content>
+          <mat-form-field>
+            <mat-select placeholder="City">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{ food.viewValue }}
+              </mat-option>
+            </mat-select>
+
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+    </div>
 </div>

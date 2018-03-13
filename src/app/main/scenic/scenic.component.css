@@ -1,1 +1,3 @@
-.scenic-container{width: 100%;height: 100%;background: none;}
+.scenic-container{height: 100%;padding: 20px 15% 0 15%;background-color: #fffffe}
+.scenic-container>.scenic-select-card{height: 200px; }
+.mat-card{position: inherit}
