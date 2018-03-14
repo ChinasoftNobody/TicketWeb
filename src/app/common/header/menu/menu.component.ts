@@ -38,6 +38,10 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/index']).then();
   }
 
+  store() {
+    this.router.navigate(['/store']).then();
+  }
+
   logout() {
     this.session.clear();
     this.loginFlag = false;

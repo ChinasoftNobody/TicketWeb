@@ -25,9 +25,11 @@ import {ServerConfig} from './config/server.config';
 import {SessionService} from './common/session.service';
 import {EventService} from './common/event.service';
 import {ScenicComponent} from './main/scenic/scenic.component';
+import {StoreComponent} from './main/store/store.component';
 @NgModule({
   declarations: [
-    AppComponent, AppHeaderComponent, AppFooterComponent, MainComponent, MenuComponent, LoginRegisterComponent, ScenicComponent
+    AppComponent, AppHeaderComponent, AppFooterComponent, MainComponent, MenuComponent, LoginRegisterComponent, ScenicComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,

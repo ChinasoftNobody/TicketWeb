@@ -1,10 +1,8 @@
 <div class="menu-container">
-  <div class="menu-content" *ngIf="!loginFlag">
-    <button mat-button (click)="login()" class="mat-button"><span>Login/Register</span></button>
-
-  </div>
-  <div class="menu-content-login" *ngIf="loginFlag">
-    <button mat-button [matMenuTriggerFor]="menu">{{userName}}</button>
+  <div class="menu-content">
+    <button mat-button (click)="store()" class="mat-button"><span>Scenic Spot</span></button>
+    <button mat-button (click)="login()"  *ngIf="!loginFlag" class="mat-button"><span>Login/Register</span></button>
+    <button mat-button [matMenuTriggerFor]="menu"  *ngIf="loginFlag">{{userName}}</button>
     <mat-menu #menu="matMenu">
       <button mat-button (click)="logout()" class="mat-button"><span>Logout</span></button>
     </mat-menu>
