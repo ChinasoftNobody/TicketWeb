@@ -20,12 +20,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {HttpService} from './common/http/http.service';
 import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
-import {MatCardModule, MatExpansionModule, MatSelectModule, MatStepperModule} from '@angular/material';
+import {
+  MatCardModule, MatExpansionModule, MatSelectModule, MatSnackBarModule,
+  MatStepperModule
+} from '@angular/material';
 import {ServerConfig} from './config/server.config';
 import {SessionService} from './common/session.service';
 import {EventService} from './common/event.service';
 import {ScenicComponent} from './main/scenic/scenic.component';
 import {StoreComponent} from './main/store/store.component';
+import {MessageService} from './common/message/message.service';
 @NgModule({
   declarations: [
     AppComponent, AppHeaderComponent, AppFooterComponent, MainComponent, MenuComponent, LoginRegisterComponent, ScenicComponent,
@@ -48,9 +52,9 @@ import {StoreComponent} from './main/store/store.component';
     MatCardModule,
     ReactiveFormsModule,
     MatStepperModule,
-    MatExpansionModule, MatSelectModule
+    MatExpansionModule, MatSelectModule, MatSnackBarModule
   ],
-  providers: [HttpService, HttpClient, ServerConfig, SessionService, EventService],
+  providers: [HttpService, HttpClient, ServerConfig, SessionService, EventService, MessageService],
   bootstrap: [AppComponent, AppHeaderComponent, AppFooterComponent]
 })
 export class AppModule {

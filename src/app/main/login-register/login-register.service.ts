@@ -10,11 +10,11 @@ export class LoginRegisterService {
   constructor(private http: HttpService, private server: ServerConfig) {
   }
 
-  login(user: any): Observable<any> {
-    return this.http.postForResponse(this.server.getUrl('user.login'), user);
+  login(user: any, success: (result: any) => void): void {
+    this.http.postFull(this.server.getUrl('user.login'), user, success);
   }
 
-  register(user: any): Observable<any> {
-    return this.http.postForResponse(this.server.getUrl('user.register'), user);
+  register(user: any, success: (result: any) => void): void {
+    this.http.postFull(this.server.getUrl('user.register'), user, success);
   }
 }

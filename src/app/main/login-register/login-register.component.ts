@@ -69,13 +69,13 @@ export class LoginRegisterComponent {
         || this.loginPasswordFormControl.hasError('required')) {
         return;
       } else {
-        this.loginRegisterService.login(this.login.user).subscribe(rep => {
-          if (rep.success) {
-            this.saveUser(rep.result);
+        this.loginRegisterService.login(this.login.user, result => {
+          if (result.success) {
+            this.saveUser(result.result);
             this.goToScenicPage();
           } else {
             this.login.loginFailed = true;
-            this.login.loginFailedMessage = rep.message;
+            this.login.loginFailedMessage = result.message;
           }
         });
       }
@@ -91,7 +91,7 @@ export class LoginRegisterComponent {
           this.register.registerFailedMessage = 'Passwords are not same';
           return;
         }
-        this.loginRegisterService.register(this.register.user).subscribe(rep => {
+        this.loginRegisterService.register(this.register.user, rep => {
           if (rep.success) {
             this.saveUser(rep.result);
             this.goToScenicPage();
